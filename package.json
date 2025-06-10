@@ -1,0 +1,12 @@
+{
+  "name": "lykoil",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "live-server",
+    "build": "echo 'No build step required'"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+} 

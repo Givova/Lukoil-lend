@@ -1,0 +1,691 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #333333;
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+.header {
+    background-color: var(--background-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.header__logo img {
+    height: 40px;
+}
+
+.header__nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.header__nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header__nav a:hover {
+    color: var(--primary-color);
+}
+
+.header__phone-number-desktop {
+    text-decoration: none;
+    color: var(--primary-color); /* Синий цвет */
+    font-weight: 500;
+    transition: color 0.3s;
+    margin-left: 2rem; /* Отступ от навигации */
+}
+
+.header__phone-number-desktop:hover {
+    color: var(--secondary-color);
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    /* margin-top: 72px; */
+}
+
+.banner__slide {
+    height: 500px;
+    /* background-color: #cccccc; */ /* Временный цвет для отладки */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner__slide h1 {
+    font-size: 2.5rem;
+    max-width: 600px;
+}
+
+/* Services */
+.services {
+    padding: 6rem 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2.5rem;
+    margin-top: 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-card {
+    background: white;
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.8rem;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-card.is-visible {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.service-card__icon {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    margin-right: 0;
+    color: var(--primary-color);
+}
+
+.service-card__text-content {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.service-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+.service-card p {
+    color: #555;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+/* Promotions */
+.promotions {
+    padding: 4rem 0;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.promotions h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.promotions-slider {
+    padding-bottom: 50px; /* Пространство для пагинации */
+}
+
+.promotions-slider .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promotion__item {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.promotion__item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.promotion__item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.promotion__item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+}
+
+.promotion__item p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Swiper навигация и пагинация для акций */
+.promotions-slider .swiper-button-next,
+.promotions-slider .swiper-button-prev {
+    color: #007bff !important;
+}
+
+.promotions-slider .swiper-pagination-bullet-active {
+    background: #007bff !important;
+}
+
+/* Contacts */
+.contacts {
+    padding: 4rem 0;
+}
+
+.map {
+    height: 400px;
+    margin: 2rem 0;
+}
+
+.contacts__info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.contacts__person {
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.contacts__address-card {
+    border: 2px solid #007bff; /* Мягкий синий бортик */
+    padding: 1.5rem; /* Увеличиваем отступы */
+    border-radius: 8px; /* Слегка скругляем углы */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); /* Добавляем мягкую тень */
+    transition: all 0.3s ease; /* Плавный переход при наведении */
+}
+
+.contacts__address-card:hover {
+    transform: translateY(-5px); /* Небольшой эффект поднятия при наведении */
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3); /* Усиленная тень при наведении */
+}
+
+/* Footer */
+.footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem 0;
+    /* margin-top: 4rem; */
+}
+
+.footer__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem; /* Добавляем небольшой отступ между строками */
+}
+
+.footer__ip,
+.footer__inn {
+    margin: 0; /* Удаляем стандартные отступы у параграфов */
+}
+
+.footer__phone {
+    text-align: center;
+    margin-top: 1rem; /* Добавляем отступ сверху, чтобы отделить от ИП/ИНН */
+}
+
+.footer__phone a {
+    text-decoration: none;
+    color: inherit; /* Сохраняем цвет текста родителя */
+}
+
+.phone-number {
+     /* Используем основной цвет для подсветки */
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.phone-number:hover {
+    color: #007bff; /* Становится синим при наведении */
+    /* text-decoration: underline; Подчеркивание при наведении */
+}
+
+.whatsapp-link:hover {
+    color: #25d366; /* Зеленый цвет WhatsApp */
+}
+
+.footer__contacts {
+    text-align: center;
+    margin-top: 1rem; /* Отступ от номера телефона */
+}
+
+.footer__contacts p {
+    margin-bottom: 0.5rem; /* Небольшой отступ между строками контактов */
+}
+
+.footer__contacts p:last-child {
+    margin-bottom: 0; /* Удаляем отступ у последнего параграфа */
+}
+
+.footer__inn {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-right: 2rem;
+    position: relative; /* Добавляем для позиционирования псевдоэлемента */
+    display: inline-block; /* Необходимо для работы width и height на псевдоэлементе */
+    /* Убираем text-decoration: none; отсюда */
+    transition: color 0.3s ease; /* Только переход для цвета */
+}
+
+.footer__inn::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Изначально ширина 0 */
+    height: 1px; /* Высота подчеркивания */
+    bottom: 0; /* Располагаем снизу текста */
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease; /* Плавный переход для ширины */
+}
+
+.footer__inn:hover {
+    color: white; /* Цвет текста при наведении */
+}
+
+.footer__inn:hover::after {
+    width: 100%; /* Расширяем подчеркивание на 100% при наведении */
+}
+
+.footer__ip {
+    font-size: 0.9rem;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.footer__ip::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.footer__ip:hover {
+    color: white;
+}
+
+.footer__ip:hover::after {
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header__nav {
+        display: none;
+    }
+    
+    .banner__slide {
+        height: 300px;
+    }
+    
+    .banner__slide h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Новые стили для адаптивного хедера */
+    .header__content {
+        padding: 0.7rem 0; /* Уменьшаем отступы */
+    }
+    .header__logo img {
+        height: 30px; /* Уменьшаем размер логотипа */
+    }
+
+    /* Бургер-меню */
+    .burger-menu-icon {
+        display: flex; /* Показываем иконку на маленьких экранах */
+        flex-direction: column;
+        justify-content: space-around;
+        width: 25px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1100; /* Выше хедера */
+    }
+
+    .burger-menu-icon .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-color);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .burger-menu-icon.open .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-menu-icon.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu-icon.open .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Мобильное навигационное меню */
+    .mobile-nav-overlay {
+        position: fixed;
+        top: 0;
+        right: 0; /* Справа */
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Более прозрачный фон */
+        z-index: 1050;
+        display: flex;
+        justify-content: flex-end; /* Выравнивание справа */
+        align-items: flex-start; /* Выравнивание сверху */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .mobile-nav-overlay.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-nav {
+        background-color: var(--background-color);
+        width: 280px; /* Фиксированная ширина шторки */
+        height: 100%;
+        padding: 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); /* Тень для эффекта выезда */
+        transform: translateX(100%); /* Изначально скрыто справа */
+        transition: transform 0.4s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mobile-nav-overlay.open .mobile-nav {
+        transform: translateX(0); /* Выезжает на экран */
+    }
+
+    .mobile-nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 1.5rem; /* Отступы для заголовка */
+        margin-bottom: 2rem; /* Отступ от списка меню */
+    }
+
+    .mobile-nav-logo {
+        height: 30px; /* Размер логотипа в мобильном меню */
+    }
+
+    .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 3rem; /* Отступ сверху для списка */
+        width: 100%;
+        text-align: left; /* Выравнивание текста по левому краю */
+    }
+
+    .mobile-nav li {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem; /* Отступ слева для элементов списка */
+    }
+
+    .mobile-nav a {
+        text-decoration: none;
+        color: var(--secondary-color);
+        font-size: 1.5rem;
+        font-weight: 600;
+        transition: color 0.3s;
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .mobile-nav a:hover {
+        color: #007bff; /* Синий цвет при наведении */
+    }
+
+    /* Стили для футера мобильного меню */
+    .mobile-nav__footer {
+        margin-top: auto;
+        width: 100%;
+        padding: 1.5rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: center; /* Выравнивание текста по центру */
+    }
+
+    .mobile-nav__footer p {
+        margin-bottom: 0.5rem;
+        color: var(--secondary-color);
+        font-size: 1.3rem; /* Увеличиваем размер текста */
+    }
+
+    .mobile-nav__footer p:last-child {
+        margin-bottom: 0;
+    }
+
+    .mobile-nav__footer p .mobile-nav__phone-number {
+        text-decoration: none;
+        color: #007bff !important; /* Убедимся, что он всегда синий */
+        font-weight: bold;
+        font-size: 1rem;
+        white-space: nowrap;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+
+    .mobile-nav__footer p .mobile-nav__phone-number:hover {
+        color: #007bff !important; /* Остается синим при наведении */
+        text-decoration: underline;
+    }
+
+    /* Кнопка закрытия бургер-меню */
+    .close-button {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        color: var(--text-color);
+        cursor: pointer;
+        transition: color 0.3s ease;
+        z-index: 1100;
+    }
+
+    .close-button:hover {
+        color: var(--primary-color);
+    }
+
+    /* Адаптивные стили для карты */
+    .map {
+        height: 250px; /* Уменьшаем высоту карты на маленьких экранах */
+    }
+
+    .header__phone-number-desktop {
+        display: none; /* Скрываем на мобильных */
+    }
+
+    .service-card p {
+        display: none; /* Скрываем текст описания на мобильных */
+    }
+
+    /* Скрытие стрелок навигации для акций на мобильных устройствах */
+    .promotions-slider .swiper-button-next,
+    .promotions-slider .swiper-button-prev {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .burger-menu-icon {
+        display: none; /* Скрываем иконку на больших экранах */
+    }
+    .mobile-nav-overlay {
+        display: none;
+    }
+    /* Показываем стрелки навигации для акций на больших экранах */
+    .promotions-slider .swiper-button-next,
+    .promotions-slider .swiper-button-prev {
+        display: flex;
+    }
+}
+
+/* Стили для блока услуг (скрываем текст описания) */
+.service-card p {
+    /* display: none; */ /* Убираем скрытие текста по умолчанию */
+}
+
+/* Custom Swiper Pagination with Progress */
+@property --p {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+@keyframes pagination-progress {
+  to { --p: 100% }
+}
+
+.swiper-pagination {
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    position: absolute !important;
+    z-index: 10 !important;
+}
+
+.swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-radius: 50%;
+    opacity: 1 !important;
+    margin: 0 6px !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+    width: 12px !important;
+    height: 12px !important;
+    position: relative;
+    /* top: -2px; */
+    --p: 0%;
+    background: conic-gradient(#007bff var(--p), rgba(255, 255, 255, 0.7) var(--p)) !important;
+    animation: pagination-progress 5s linear;
+}
+
+/* Custom Swiper Navigation Arrows */
+.swiper-button-prev,
+.swiper-button-next {
+    color: blue; /* Изменяем цвет стрелок на синий */
+    width: 36px !important; /* Увеличиваем размер контейнера */
+    height: 36px !important; /* Увеличиваем размер контейнера */
+    border-radius: 50%; /* Делаем круглую форму */
+    background-color: transparent; /* Изначально нет фона */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 16px !important; /* Увеличиваем размер иконки стрелки */
+    line-height: 1 !important; /* Обеспечиваем вертикальное центрирование */
+}
+
+.swiper-button-prev {
+    left: 20px !important; /* Подвигаем левую стрелку дальше от центра, на 20px от края и делаем его важным */
+}
+
+.swiper-button-next {
+    right: 20px !important; /* Подвигаем правую стрелку дальше от центра, на 20px от края и делаем его важным */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: rgba(173, 216, 230, 0.6); /* Светло-синий круг при наведении */
+    color: white; /* Стрелка становится белой при наведении */
+}
+
+/* Анимации для появления элементов */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

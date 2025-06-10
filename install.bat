@@ -1,0 +1,6 @@
+@echo off
+echo Installing dependencies...
+npm install
+echo Creating necessary directories...
+mkdir public\images
+echo Done! 

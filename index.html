@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lykoil - Многофункциональный центр</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo" id="main-logo">
+                    <img src="assets/logo.svg" alt="Lykoil Logo">
+                </div>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#promotions">Акции</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+                <a href="tel:+79203038567" class="header__phone-number-desktop">+7 (920) 303-85-67</a>
+                <div class="burger-menu-icon">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav-overlay">
+        <nav class="mobile-nav">
+            <div class="mobile-nav-header">
+                <img src="assets/logo.svg" alt="Lykoil Logo" class="mobile-nav-logo">
+                <div class="close-button">&times;</div>
+            </div>
+            <ul>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#promotions">Акции</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <div class="mobile-nav__footer">
+                <p>Позвоните нам</p>
+                <p><a href="tel:+79203038567" class="mobile-nav__phone-number">+7 (920) 303-85-67</a></p>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <section class="banner">
+            <div class="swiper banner-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="banner__slide" style="background-image: url('baner.jpg')">
+                            <div class="container">
+                                <h1>Многофункциональный центр для международных перевозчиков</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner__slide" style="background-image: url('baner.jpg')">
+                            <div class="container">
+                                <h1>Второй слайд: Больше возможностей для вашего бизнеса</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Наши услуги</h2>
+                <div class="services__grid">
+                    <!-- Сервисы будут добавлены через JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="promotions" class="promotions">
+            <div class="container">
+                <h2>Акции </h2>
+                <div class="swiper promotions-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Акции будут добавлены через JavaScript -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="contacts">
+            <div class="container">
+                <h2>Контакты</h2>
+                <div class="map" id="map"></div>
+                <div class="contacts__info">
+                  
+                    
+                    <div class="contacts__person contacts__address-card">
+                        <h3>Адрес</h3>
+                        <p>Смоленская обл., Смоленский р-н, д. Буда, АЗС Лукойл, 455 км М1, направление на Москву (левая сторона)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                
+                <div class="footer__row">
+                    <p class="footer__ip">ИП Зеликов Игорь Сергеевич</p>
+                    <p class="footer__inn">ИНН Зеликов: 673209938317
+                    </p>
+                </div>
+                <div class="footer__row">
+                    <p class="footer__ip">ИП Зеликова Анна Николаевна</p>
+                    <p class="footer__inn">ИНН Зеликова: 673211217915</p>
+                </div>
+                <div class="footer__phone">
+                    <p><a href="tel:+79203038567"><span class="phone-number">тел. +7 (920) 303-85-67</span></a></p>
+                    <p><a href="https://wa.me/79203038567" target="_blank" class="whatsapp-link">WhatsApp: +7 (920) 303-85-67</a></p>
+                    <p>&copy; 2025 Company. Все права защищены.</p>
+                </div>
+              
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
