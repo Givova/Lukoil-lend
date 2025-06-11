@@ -1,0 +1,63 @@
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 3rem 0;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  &__ip,
+  &__inn {
+    margin: 0;
+    color: #fff;
+  }
+
+  &__phone {
+    text-align: center;
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+
+    .whatsapp-link {
+      color: #25D366;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0;
+
+    &__row {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+    }
+  }
+} 
