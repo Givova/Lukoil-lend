@@ -13,12 +13,12 @@ const Header: React.FC = () => {
       <div className="container">
         <div className="header__content">
           <div className="header__logo">
-            <img src="/assets/logo.svg" alt="Lykoil Logo" />
+            <img src="/assets/logo.svg" alt="Многофункциональный центр" />
           </div>
           <nav className="header__nav">
             <ul>
               <li><a href="#services">Услуги</a></li>
-              <li><a href="#promotions">Акции</a></li>
+              {/* <li><a href="#promotions">Акции</a></li> */}
               <li><a href="#contacts">Контакты</a></li>
             </ul>
           </nav>
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
       <div className={`mobile-nav-overlay ${isMobileMenuOpen ? 'active' : ''}`}>
         <nav className="mobile-nav">
           <div className="mobile-nav-header">
-            <img src="/assets/logo.svg" alt="Lykoil Logo" className="mobile-nav-logo" />
+            <img src="/assets/logo.svg" alt="Многофункциональный центр" className="mobile-nav-logo" />
             <div className="close-button" onClick={toggleMobileMenu}>&times;</div>
           </div>
           <ul>

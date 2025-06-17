@@ -24,12 +24,12 @@ const Contacts: React.FC = () => {
     if (window.ymaps) {
       window.ymaps.ready(() => {
         const map = new window.ymaps.Map('map', {
-          center: [54.690201, 31.020467], // Координаты АЗС Лукойл 455 км М1
+          center: [54.690766, 31.020186], // Координаты АЗС
           zoom: 15
         });
 
-        const placemark = new window.ymaps.Placemark([54.690201, 31.020467], {
-          balloonContent: 'АЗС Лукойл'
+        const placemark = new window.ymaps.Placemark([54.690766, 31.020186], {
+          balloonContent: 'АЗС'
         });
 
         map.geoObjects.add(placemark);
@@ -45,7 +45,7 @@ const Contacts: React.FC = () => {
         <div className="contacts__info">
           <div className="contacts__person contacts__address-card">
             <h3>Адрес</h3>
-            <p>Смоленская обл., Краснинский р-н, д. Буда, АЗС Лукойл, 455 км М1, направление на Москву (левая сторона)</p>
+            <p>Смоленская обл., Краснинский р-н, д. Буда, АЗС, 455 км М1, направление на Москву (левая сторона)</p>
           </div>
         </div>
       </div>
