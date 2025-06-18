@@ -16,13 +16,13 @@ const Footer: React.FC = () => {
           </div>
           <div className="footer__phone">
             <p>
-              <a href="tel:+79203038567">
-                <span className="phone-number">тел. +7 (920) 303-85-67</span>
+              <a href="tel:+79203053981">
+                <span className="phone-number">тел. +7 (920) 305-39-81</span>
               </a>
             </p>
             <p>
-              <a href="https://wa.me/79203038567" target="_blank" rel="noopener noreferrer" className="whatsapp-link">
-                WhatsApp: +7 (920) 303-85-67
+              <a href="https://wa.me/79203053981" target="_blank" rel="noopener noreferrer" className="whatsapp-link">
+                WhatsApp: +7 (920) 305-39-81
               </a>
             </p>
             <p>&copy; 2025 Многофункциональный центр. Все права защищены.</p>

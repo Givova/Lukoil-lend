@@ -9,14 +9,23 @@ declare global {
 
 const Contacts: React.FC = () => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU';
-    script.async = true;
-    script.onload = initMap;
-    document.body.appendChild(script);
+    // Проверяем, был ли уже добавлен скрипт Яндекс.Карт
+    const scriptId = 'yandex-maps-script';
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = scriptId;
+      script.src = 'https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU';
+      script.async = true;
+      script.onload = initMap;
+      document.body.appendChild(script);
+    } else if (window.ymaps) {
+      // Если скрипт уже есть и ymaps загружен, просто инициализируем карту
+      initMap();
+    }
 
     return () => {
-      document.body.removeChild(script);
+      // Не удаляем скрипт, чтобы избежать повторного подключения
     };
   }, []);
 
@@ -24,11 +33,11 @@ const Contacts: React.FC = () => {
     if (window.ymaps) {
       window.ymaps.ready(() => {
         const map = new window.ymaps.Map('map', {
-          center: [54.690766, 31.020186], // Координаты АЗС
+          center: [54.690766, 31.019975], // Тонкая коррекция координаты
           zoom: 15
         });
 
-        const placemark = new window.ymaps.Placemark([54.690766, 31.020186], {
+        const placemark = new window.ymaps.Placemark([54.690766, 31.019975], {
           balloonContent: 'АЗС'
         });
 

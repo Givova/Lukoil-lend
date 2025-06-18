@@ -22,8 +22,8 @@ const Header: React.FC = () => {
               <li><a href="#contacts">Контакты</a></li>
             </ul>
           </nav>
-          <a href="tel:+79203038567" className="header__phone-number-desktop">
-            +7 (920) 303-85-67
+          <a href="https://wa.me/79203053981" className="header__phone-number-desktop" target="_blank" rel="noopener noreferrer">
+            +7 (920) 305-39-81
           </a>
           <div className="burger-menu-icon" onClick={toggleMobileMenu}>
             <div className="bar"></div>
@@ -47,8 +47,8 @@ const Header: React.FC = () => {
           <div className="mobile-nav__footer">
             <p>Позвоните нам</p>
             <p>
-              <a href="tel:+79203038567" className="mobile-nav__phone-number">
-                +7 (920) 303-85-67
+              <a href="https://wa.me/79203053981" className="mobile-nav__phone-number" target="_blank" rel="noopener noreferrer">
+                +7 (920) 305-39-81
               </a>
             </p>
           </div>
