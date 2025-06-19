@@ -11,13 +11,33 @@
 
   &__row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 2rem;
 
     &:last-of-type {
       border-bottom: none;
+    }
+  }
+
+  &__doc-block {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 300px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+
+      .footer__inn {
+        color: #196dff;
+      }
     }
   }
 
@@ -25,6 +45,17 @@
   &__inn {
     margin: 0;
     color: #fff;
+  }
+
+  &__ip {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__inn {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
   }
 
   &__phone {
@@ -57,7 +88,13 @@
     &__row {
       flex-direction: column;
       text-align: center;
-      gap: 0.5rem;
+      gap: 1rem;
+    }
+
+    &__doc-block {
+      min-width: auto;
+      width: 100%;
+      max-width: 300px;
     }
   }
 } 
